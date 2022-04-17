@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Test Math</string>
+    <string name="btn_help">Подсказка</string>
 </resources>

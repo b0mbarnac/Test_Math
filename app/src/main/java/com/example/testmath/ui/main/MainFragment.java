@@ -1,5 +1,6 @@
 package com.example.testmath.ui.main;
 
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+//import com.example.testmath.DialogFragment;
+import com.example.testmath.MyDialogFragment;
 import com.example.testmath.R;
 import com.example.testmath.SecondFragment;
 import com.example.testmath.databinding.MainFragmentBinding;
@@ -49,7 +52,15 @@ public class MainFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         mViewModel.setExpression();
         fillButtons(binding);
-        ;
+
+        binding.button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager manager = getFragmentManager();
+                MyDialogFragment dialogFragment = new MyDialogFragment();
+                dialogFragment.show(manager, "myDialog");
+            }
+        });
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,8 +116,9 @@ public class MainFragment extends Fragment {
     }
 
     private void goToNextRound(String buttonsText) {
-        if (mViewModel.getRound() < 6) {
-            mViewModel.addScore(buttonsText);
+        mViewModel.addScore(buttonsText);
+        if (mViewModel.getRound() < 5) {
+
             mViewModel.setExpression();
             fillButtons(binding);
         } else {

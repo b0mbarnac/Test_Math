@@ -18,15 +18,18 @@ public class Test {
             case 0:
                 operation = "+";
                 second_num = r.nextInt(200 - first_num);
+                result = first_num + second_num;
                 break;
             case 1:
                 operation = "-";
                 second_num = r.nextInt(first_num);
+                result = first_num - second_num;
                 break;
             case 2:
                 operation = "*";
-                first_num = r.nextInt(55);
+                first_num = r.nextInt(55)+1;
                 second_num = r.nextInt((int) (200 / first_num));
+                result = first_num * second_num;
                 break;
             case 3:
                 operation = "/";
@@ -37,6 +40,7 @@ public class Test {
                     if (second_num == 0)
                         second_num--;
                 }
+                result = first_num / second_num;
                 break;
         }
 //        System.out.println("_______________" + r.nextInt(5)+ "___________________________");
@@ -51,24 +55,6 @@ public class Test {
     }
 
     public int get_result() {
-        switch (tmp_oper) {
-            case 0:
-//                operation = "+";
-                result = first_num + second_num;
-                break;
-            case 1:
-//                operation = "-";
-                result = first_num - second_num;
-                break;
-            case 2:
-//                operation = "*";
-                result = first_num * second_num;
-                break;
-            case 3:
-//                operation = "/";
-                result = first_num / second_num;
-                break;
-        }
         return result;
     }
 

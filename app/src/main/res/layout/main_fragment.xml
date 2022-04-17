@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_help"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
     <TextView
         android:id="@+id/message"
         android:layout_width="0dp"
@@ -21,6 +31,7 @@
         app:layout_constraintVertical_bias="0.08" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
